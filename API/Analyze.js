@@ -21,9 +21,8 @@ export default async function handler(req, res) {
 
     const data = await response.json();
     return res.status(response.status).json(data);
-  } catch (err) {
-  setMessages([userMsg, { role: "assistant", content: `Error: ${err.message}`, display: `Error: ${err.message}` }]);
+  } catch {
+  setMessages([userMsg, { role: "assistant", content: "Something went wrong. Please try again.", display: "Something went wrong. Please try again." }]);
 }
 
-  }
 }
